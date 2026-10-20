@@ -1,0 +1,110 @@
+{
+ "vars": {
+  "rec": 0,
+  "hard_cond": "perspective_severe"
+ },
+ "segments": [
+  {
+   "id": "intro",
+   "actions": [
+    "open"
+   ],
+   "text": "Digitized paper ECGs are usually trusted blindly. ECG Trust Layer scores every heartbeat by how well the original image supports it. This is a research prototype, and every image here is a synthetic rendering of a PTB-XL signal, not a photograph of a real paper ECG."
+  },
+  {
+   "id": "clean",
+   "actions": [
+    "analyze_clean"
+   ],
+   "text": "A clean example. The tool reads the grid, extracts the trace, finds each beat, and scores it. The summary counts accepted, uncertain and rejected beats."
+  },
+  {
+   "id": "inspect",
+   "actions": [
+    "show_image",
+    "inspect_accepted",
+    "open_evidence"
+   ],
+   "text": "Click a beat to see why. Six kinds of evidence feed the score: re-render support, ambiguity, continuity, missing data, grid calibration and image quality, and every number can be opened. Measurements are reported only for accepted beats."
+  },
+  {
+   "id": "occlusion",
+   "actions": [
+    "analyze_occlusion"
+   ],
+   "text": "Now part of the trace is hidden. The unreadable columns show as a gap and are never filled in. Beats whose windows touch the gap lose trust, and a beat hidden completely would vanish from the list rather than be invented."
+  },
+  {
+   "id": "hard",
+   "actions": [
+    "analyze_hard",
+    "inspect_rejected"
+   ],
+   "text": "With a strongly tilted image the grid disagrees with itself, so every beat is rejected and all measurements are withheld. The dashed panel is evaluation only. It uses the original signal, which the score never sees, and confirms these beats really were wrong."
+  },
+  {
+   "id": "result",
+   "actions": [
+    "tab_eval"
+   ],
+   "text": "On the held-out test of eighty records and over eighteen thousand beats, ranking by trust cuts the average error from point zero five eight nine to point zero four six eight, twenty percent lower, with an interval that excludes zero. It also beats the best simple baseline, but only just."
+  },
+  {
+   "id": "chart",
+   "actions": [
+    "scroll_chart"
+   ],
+   "text": "The teal line stays below accept-everything, but it is still far from the dotted oracle, so there is real headroom."
+  },
+  {
+   "id": "op",
+   "actions": [
+    "scroll_op"
+   ],
+   "text": "At the operating point the app uses, seventy percent of beats are accepted, and only one point six percent of those are bad, against four point one percent overall."
+  },
+  {
+   "id": "prereg",
+   "actions": [
+    "scroll_prereg"
+   ],
+   "text": "I have to be honest about this operating point. It was chosen after the pre-registered rule turned out to be vacuous: that rule accepted every beat. That negative result is reported here, unchanged."
+  },
+  {
+   "id": "weak",
+   "actions": [
+    "scroll_conditions"
+   ],
+   "text": "It does not work everywhere. With severe thick traces, fifteen percent of accepted beats are still bad, and for severe blur the score does not help. The gate also has a cost: for about a quarter of images, no heart rate could be reported."
+  },
+  {
+   "id": "repro",
+   "actions": [
+    "reproduce"
+   ],
+   "text": "Everything here can be reproduced with this button. It runs the real pipeline on this machine: render, degrade, digitize, score, and statistics. The quick preset uses ten held-out records and takes about half a minute.",
+   "wait_job": true
+  },
+  {
+   "id": "repro_done",
+   "actions": [
+    "noop"
+   ],
+   "text": "It finished and matches the shipped results exactly. Ten records only prove reproducibility. The confirmatory result is the eighty-record test."
+  },
+  {
+   "id": "limits",
+   "actions": [
+    "tab_about"
+   ],
+   "text": "The limits: synthetic images, no clinical validation, an evidence index rather than a probability, and only R amplitude, R R interval and heart rate are measured. This is not a medical device."
+  },
+  {
+   "id": "outro",
+   "actions": [
+    "noop"
+   ],
+   "text": "ECG Trust Layer: show which beats you can still verify. The narration is synthetic speech from Piper."
+  }
+ ]
+}

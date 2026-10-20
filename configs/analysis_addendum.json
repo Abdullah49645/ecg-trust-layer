@@ -1,0 +1,10 @@
+{
+  "_comment": "Addendum written AFTER the first full evaluation run, which exposed a degenerate pre-registered operating point. The pre-registered rule (configs/analysis_plan.json) is kept and still reported unchanged as 'prereg'. This addendum adds ONE post-hoc operating point; it is labelled post-hoc everywhere it is reported.",
+  "finding_that_motivated_it": "Pre-registered rule: accept = lowest validation threshold with accepted bad-beat rate <= 5%. The overall bad-beat rate (val 4.3%, test 4.1%) is already below 5%, so the rule is vacuous: t_accept = 0, every beat is 'accepted', the accept/uncertain/reject layer does nothing. The ranking (AURC) is unaffected.",
+  "posthoc_operating_point": {
+    "accept_max_bad": 0.01,
+    "reject_min_bad": 0.5,
+    "choice_rationale": "1% is tied to a measured quantity, not tuned: the bad-beat rate on CLEAN images in the tune split is 0.81%, i.e. the digitizer's own floor. 'Accepted' therefore means 'as reliable as a clean render'. Thresholds themselves are still chosen on the validation split only; the test split is used once for reporting.",
+    "disclosure": "While deciding, the 2% and 5% targets were also inspected on the VALIDATION split (not on test). Only 1% is reported."
+  }
+}

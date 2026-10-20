@@ -1,0 +1,1033 @@
+{
+  "dataset": "PTB-XL v1.0.3 (PhysioNet, doi:10.13026/kfzx-aw45)",
+  "seed": 2026,
+  "split_policy": "official PTB-XL strat_fold; tune=folds1-8, val=fold9, test=fold10; one record per patient",
+  "splits": {
+    "tune": [
+      {
+        "ecg_id": "4535",
+        "patient_id": "11769.0",
+        "filename_hr": "records500/04000/04535_hr",
+        "strat_fold": "8"
+      },
+      {
+        "ecg_id": "5114",
+        "patient_id": "19159.0",
+        "filename_hr": "records500/05000/05114_hr",
+        "strat_fold": "5"
+      },
+      {
+        "ecg_id": "5677",
+        "patient_id": "10310.0",
+        "filename_hr": "records500/05000/05677_hr",
+        "strat_fold": "6"
+      },
+      {
+        "ecg_id": "7650",
+        "patient_id": "14001.0",
+        "filename_hr": "records500/07000/07650_hr",
+        "strat_fold": "1"
+      },
+      {
+        "ecg_id": "15390",
+        "patient_id": "14921.0",
+        "filename_hr": "records500/15000/15390_hr",
+        "strat_fold": "2"
+      },
+      {
+        "ecg_id": "4147",
+        "patient_id": "396.0",
+        "filename_hr": "records500/04000/04147_hr",
+        "strat_fold": "3"
+      },
+      {
+        "ecg_id": "13140",
+        "patient_id": "10220.0",
+        "filename_hr": "records500/13000/13140_hr",
+        "strat_fold": "7"
+      },
+      {
+        "ecg_id": "20586",
+        "patient_id": "17902.0",
+        "filename_hr": "records500/20000/20586_hr",
+        "strat_fold": "8"
+      },
+      {
+        "ecg_id": "2998",
+        "patient_id": "3545.0",
+        "filename_hr": "records500/02000/02998_hr",
+        "strat_fold": "1"
+      },
+      {
+        "ecg_id": "10495",
+        "patient_id": "383.0",
+        "filename_hr": "records500/10000/10495_hr",
+        "strat_fold": "8"
+      },
+      {
+        "ecg_id": "5031",
+        "patient_id": "12625.0",
+        "filename_hr": "records500/05000/05031_hr",
+        "strat_fold": "5"
+      },
+      {
+        "ecg_id": "118",
+        "patient_id": "21192.0",
+        "filename_hr": "records500/00000/00118_hr",
+        "strat_fold": "3"
+      },
+      {
+        "ecg_id": "20856",
+        "patient_id": "21663.0",
+        "filename_hr": "records500/20000/20856_hr",
+        "strat_fold": "7"
+      },
+      {
+        "ecg_id": "97",
+        "patient_id": "12761.0",
+        "filename_hr": "records500/00000/00097_hr",
+        "strat_fold": "6"
+      },
+      {
+        "ecg_id": "9070",
+        "patient_id": "12074.0",
+        "filename_hr": "records500/09000/09070_hr",
+        "strat_fold": "7"
+      },
+      {
+        "ecg_id": "12069",
+        "patient_id": "1598.0",
+        "filename_hr": "records500/12000/12069_hr",
+        "strat_fold": "1"
+      },
+      {
+        "ecg_id": "16833",
+        "patient_id": "3390.0",
+        "filename_hr": "records500/16000/16833_hr",
+        "strat_fold": "2"
+      },
+      {
+        "ecg_id": "21082",
+        "patient_id": "13432.0",
+        "filename_hr": "records500/21000/21082_hr",
+        "strat_fold": "7"
+      },
+      {
+        "ecg_id": "20838",
+        "patient_id": "20715.0",
+        "filename_hr": "records500/20000/20838_hr",
+        "strat_fold": "7"
+      },
+      {
+        "ecg_id": "5787",
+        "patient_id": "17860.0",
+        "filename_hr": "records500/05000/05787_hr",
+        "strat_fold": "8"
+      },
+      {
+        "ecg_id": "14687",
+        "patient_id": "5713.0",
+        "filename_hr": "records500/14000/14687_hr",
+        "strat_fold": "4"
+      },
+      {
+        "ecg_id": "17729",
+        "patient_id": "700.0",
+        "filename_hr": "records500/17000/17729_hr",
+        "strat_fold": "4"
+      },
+      {
+        "ecg_id": "10343",
+        "patient_id": "14203.0",
+        "filename_hr": "records500/10000/10343_hr",
+        "strat_fold": "4"
+      },
+      {
+        "ecg_id": "20223",
+        "patient_id": "19022.0",
+        "filename_hr": "records500/20000/20223_hr",
+        "strat_fold": "6"
+      },
+      {
+        "ecg_id": "3978",
+        "patient_id": "553.0",
+        "filename_hr": "records500/03000/03978_hr",
+        "strat_fold": "8"
+      },
+      {
+        "ecg_id": "5167",
+        "patient_id": "12876.0",
+        "filename_hr": "records500/05000/05167_hr",
+        "strat_fold": "2"
+      },
+      {
+        "ecg_id": "19498",
+        "patient_id": "10034.0",
+        "filename_hr": "records500/19000/19498_hr",
+        "strat_fold": "3"
+      },
+      {
+        "ecg_id": "1289",
+        "patient_id": "21532.0",
+        "filename_hr": "records500/01000/01289_hr",
+        "strat_fold": "1"
+      },
+      {
+        "ecg_id": "18959",
+        "patient_id": "13850.0",
+        "filename_hr": "records500/18000/18959_hr",
+        "strat_fold": "8"
+      },
+      {
+        "ecg_id": "15786",
+        "patient_id": "12457.0",
+        "filename_hr": "records500/15000/15786_hr",
+        "strat_fold": "1"
+      },
+      {
+        "ecg_id": "944",
+        "patient_id": "900.0",
+        "filename_hr": "records500/00000/00944_hr",
+        "strat_fold": "7"
+      },
+      {
+        "ecg_id": "11829",
+        "patient_id": "4131.0",
+        "filename_hr": "records500/11000/11829_hr",
+        "strat_fold": "7"
+      },
+      {
+        "ecg_id": "19536",
+        "patient_id": "17883.0",
+        "filename_hr": "records500/19000/19536_hr",
+        "strat_fold": "2"
+      },
+      {
+        "ecg_id": "21479",
+        "patient_id": "11954.0",
+        "filename_hr": "records500/21000/21479_hr",
+        "strat_fold": "6"
+      },
+      {
+        "ecg_id": "1412",
+        "patient_id": "425.0",
+        "filename_hr": "records500/01000/01412_hr",
+        "strat_fold": "5"
+      },
+      {
+        "ecg_id": "20979",
+        "patient_id": "12699.0",
+        "filename_hr": "records500/20000/20979_hr",
+        "strat_fold": "4"
+      },
+      {
+        "ecg_id": "3319",
+        "patient_id": "911.0",
+        "filename_hr": "records500/03000/03319_hr",
+        "strat_fold": "6"
+      },
+      {
+        "ecg_id": "7764",
+        "patient_id": "9892.0",
+        "filename_hr": "records500/07000/07764_hr",
+        "strat_fold": "5"
+      },
+      {
+        "ecg_id": "15884",
+        "patient_id": "21225.0",
+        "filename_hr": "records500/15000/15884_hr",
+        "strat_fold": "6"
+      },
+      {
+        "ecg_id": "5200",
+        "patient_id": "12314.0",
+        "filename_hr": "records500/05000/05200_hr",
+        "strat_fold": "2"
+      },
+      {
+        "ecg_id": "15170",
+        "patient_id": "17551.0",
+        "filename_hr": "records500/15000/15170_hr",
+        "strat_fold": "6"
+      },
+      {
+        "ecg_id": "8445",
+        "patient_id": "8034.0",
+        "filename_hr": "records500/08000/08445_hr",
+        "strat_fold": "6"
+      },
+      {
+        "ecg_id": "6772",
+        "patient_id": "2116.0",
+        "filename_hr": "records500/06000/06772_hr",
+        "strat_fold": "7"
+      },
+      {
+        "ecg_id": "7576",
+        "patient_id": "19058.0",
+        "filename_hr": "records500/07000/07576_hr",
+        "strat_fold": "7"
+      },
+      {
+        "ecg_id": "4783",
+        "patient_id": "7428.0",
+        "filename_hr": "records500/04000/04783_hr",
+        "strat_fold": "3"
+      },
+      {
+        "ecg_id": "6062",
+        "patient_id": "17956.0",
+        "filename_hr": "records500/06000/06062_hr",
+        "strat_fold": "8"
+      },
+      {
+        "ecg_id": "3046",
+        "patient_id": "2252.0",
+        "filename_hr": "records500/03000/03046_hr",
+        "strat_fold": "6"
+      },
+      {
+        "ecg_id": "14422",
+        "patient_id": "20819.0",
+        "filename_hr": "records500/14000/14422_hr",
+        "strat_fold": "3"
+      },
+      {
+        "ecg_id": "17540",
+        "patient_id": "6081.0",
+        "filename_hr": "records500/17000/17540_hr",
+        "strat_fold": "2"
+      },
+      {
+        "ecg_id": "9672",
+        "patient_id": "15137.0",
+        "filename_hr": "records500/09000/09672_hr",
+        "strat_fold": "3"
+      },
+      {
+        "ecg_id": "7469",
+        "patient_id": "20182.0",
+        "filename_hr": "records500/07000/07469_hr",
+        "strat_fold": "3"
+      },
+      {
+        "ecg_id": "4199",
+        "patient_id": "14852.0",
+        "filename_hr": "records500/04000/04199_hr",
+        "strat_fold": "1"
+      },
+      {
+        "ecg_id": "19911",
+        "patient_id": "14638.0",
+        "filename_hr": "records500/19000/19911_hr",
+        "strat_fold": "5"
+      },
+      {
+        "ecg_id": "3425",
+        "patient_id": "2944.0",
+        "filename_hr": "records500/03000/03425_hr",
+        "strat_fold": "2"
+      },
+      {
+        "ecg_id": "14355",
+        "patient_id": "858.0",
+        "filename_hr": "records500/14000/14355_hr",
+        "strat_fold": "8"
+      },
+      {
+        "ecg_id": "4372",
+        "patient_id": "6655.0",
+        "filename_hr": "records500/04000/04372_hr",
+        "strat_fold": "2"
+      },
+      {
+        "ecg_id": "16895",
+        "patient_id": "20894.0",
+        "filename_hr": "records500/16000/16895_hr",
+        "strat_fold": "5"
+      },
+      {
+        "ecg_id": "11571",
+        "patient_id": "15580.0",
+        "filename_hr": "records500/11000/11571_hr",
+        "strat_fold": "2"
+      },
+      {
+        "ecg_id": "607",
+        "patient_id": "4843.0",
+        "filename_hr": "records500/00000/00607_hr",
+        "strat_fold": "6"
+      },
+      {
+        "ecg_id": "21338",
+        "patient_id": "13145.0",
+        "filename_hr": "records500/21000/21338_hr",
+        "strat_fold": "6"
+      }
+    ],
+    "val": [
+      {
+        "ecg_id": "8724",
+        "patient_id": "2835.0",
+        "filename_hr": "records500/08000/08724_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "15340",
+        "patient_id": "11433.0",
+        "filename_hr": "records500/15000/15340_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "4166",
+        "patient_id": "21102.0",
+        "filename_hr": "records500/04000/04166_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "12493",
+        "patient_id": "20738.0",
+        "filename_hr": "records500/12000/12493_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "5306",
+        "patient_id": "17117.0",
+        "filename_hr": "records500/05000/05306_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "3783",
+        "patient_id": "14136.0",
+        "filename_hr": "records500/03000/03783_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "2078",
+        "patient_id": "4507.0",
+        "filename_hr": "records500/02000/02078_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "17185",
+        "patient_id": "20147.0",
+        "filename_hr": "records500/17000/17185_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "16268",
+        "patient_id": "1462.0",
+        "filename_hr": "records500/16000/16268_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "5324",
+        "patient_id": "17222.0",
+        "filename_hr": "records500/05000/05324_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "14406",
+        "patient_id": "14466.0",
+        "filename_hr": "records500/14000/14406_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "18398",
+        "patient_id": "5706.0",
+        "filename_hr": "records500/18000/18398_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "8298",
+        "patient_id": "384.0",
+        "filename_hr": "records500/08000/08298_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "13505",
+        "patient_id": "19172.0",
+        "filename_hr": "records500/13000/13505_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "7244",
+        "patient_id": "17069.0",
+        "filename_hr": "records500/07000/07244_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "1497",
+        "patient_id": "18668.0",
+        "filename_hr": "records500/01000/01497_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "18628",
+        "patient_id": "19691.0",
+        "filename_hr": "records500/18000/18628_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "4264",
+        "patient_id": "12193.0",
+        "filename_hr": "records500/04000/04264_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "491",
+        "patient_id": "3731.0",
+        "filename_hr": "records500/00000/00491_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "7884",
+        "patient_id": "18347.0",
+        "filename_hr": "records500/07000/07884_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "12610",
+        "patient_id": "6959.0",
+        "filename_hr": "records500/12000/12610_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "10744",
+        "patient_id": "20851.0",
+        "filename_hr": "records500/10000/10744_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "13201",
+        "patient_id": "11587.0",
+        "filename_hr": "records500/13000/13201_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "6226",
+        "patient_id": "12176.0",
+        "filename_hr": "records500/06000/06226_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "5825",
+        "patient_id": "823.0",
+        "filename_hr": "records500/05000/05825_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "18158",
+        "patient_id": "17344.0",
+        "filename_hr": "records500/18000/18158_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "186",
+        "patient_id": "12396.0",
+        "filename_hr": "records500/00000/00186_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "10132",
+        "patient_id": "344.0",
+        "filename_hr": "records500/10000/10132_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "173",
+        "patient_id": "10676.0",
+        "filename_hr": "records500/00000/00173_hr",
+        "strat_fold": "9"
+      },
+      {
+        "ecg_id": "18810",
+        "patient_id": "10036.0",
+        "filename_hr": "records500/18000/18810_hr",
+        "strat_fold": "9"
+      }
+    ],
+    "test": [
+      {
+        "ecg_id": "968",
+        "patient_id": "4944.0",
+        "filename_hr": "records500/00000/00968_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "11500",
+        "patient_id": "13887.0",
+        "filename_hr": "records500/11000/11500_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "9583",
+        "patient_id": "18252.0",
+        "filename_hr": "records500/09000/09583_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "63",
+        "patient_id": "15265.0",
+        "filename_hr": "records500/00000/00063_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "14781",
+        "patient_id": "10286.0",
+        "filename_hr": "records500/14000/14781_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "7024",
+        "patient_id": "18366.0",
+        "filename_hr": "records500/07000/07024_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "9272",
+        "patient_id": "9459.0",
+        "filename_hr": "records500/09000/09272_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "11182",
+        "patient_id": "21778.0",
+        "filename_hr": "records500/11000/11182_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "19853",
+        "patient_id": "17338.0",
+        "filename_hr": "records500/19000/19853_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "16602",
+        "patient_id": "7037.0",
+        "filename_hr": "records500/16000/16602_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "10250",
+        "patient_id": "18361.0",
+        "filename_hr": "records500/10000/10250_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "2210",
+        "patient_id": "2760.0",
+        "filename_hr": "records500/02000/02210_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "6000",
+        "patient_id": "5028.0",
+        "filename_hr": "records500/06000/06000_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "499",
+        "patient_id": "2678.0",
+        "filename_hr": "records500/00000/00499_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "11885",
+        "patient_id": "8628.0",
+        "filename_hr": "records500/11000/11885_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "1867",
+        "patient_id": "12695.0",
+        "filename_hr": "records500/01000/01867_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "4893",
+        "patient_id": "5052.0",
+        "filename_hr": "records500/04000/04893_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "13595",
+        "patient_id": "16047.0",
+        "filename_hr": "records500/13000/13595_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "2403",
+        "patient_id": "11393.0",
+        "filename_hr": "records500/02000/02403_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "2285",
+        "patient_id": "2208.0",
+        "filename_hr": "records500/02000/02285_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "8415",
+        "patient_id": "11737.0",
+        "filename_hr": "records500/08000/08415_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "11533",
+        "patient_id": "18719.0",
+        "filename_hr": "records500/11000/11533_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "13120",
+        "patient_id": "16856.0",
+        "filename_hr": "records500/13000/13120_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "19226",
+        "patient_id": "16006.0",
+        "filename_hr": "records500/19000/19226_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "13361",
+        "patient_id": "12506.0",
+        "filename_hr": "records500/13000/13361_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "16707",
+        "patient_id": "14010.0",
+        "filename_hr": "records500/16000/16707_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "7243",
+        "patient_id": "18304.0",
+        "filename_hr": "records500/07000/07243_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "15421",
+        "patient_id": "16734.0",
+        "filename_hr": "records500/15000/15421_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "573",
+        "patient_id": "5837.0",
+        "filename_hr": "records500/00000/00573_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "7621",
+        "patient_id": "20277.0",
+        "filename_hr": "records500/07000/07621_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "13212",
+        "patient_id": "16092.0",
+        "filename_hr": "records500/13000/13212_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "1251",
+        "patient_id": "8574.0",
+        "filename_hr": "records500/01000/01251_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "13499",
+        "patient_id": "11335.0",
+        "filename_hr": "records500/13000/13499_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "18859",
+        "patient_id": "20974.0",
+        "filename_hr": "records500/18000/18859_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "13248",
+        "patient_id": "11496.0",
+        "filename_hr": "records500/13000/13248_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "8123",
+        "patient_id": "1984.0",
+        "filename_hr": "records500/08000/08123_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "3689",
+        "patient_id": "18460.0",
+        "filename_hr": "records500/03000/03689_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "15064",
+        "patient_id": "15353.0",
+        "filename_hr": "records500/15000/15064_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "4444",
+        "patient_id": "5256.0",
+        "filename_hr": "records500/04000/04444_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "11802",
+        "patient_id": "11015.0",
+        "filename_hr": "records500/11000/11802_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "1624",
+        "patient_id": "5715.0",
+        "filename_hr": "records500/01000/01624_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "11108",
+        "patient_id": "18954.0",
+        "filename_hr": "records500/11000/11108_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "16609",
+        "patient_id": "2737.0",
+        "filename_hr": "records500/16000/16609_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "9929",
+        "patient_id": "11217.0",
+        "filename_hr": "records500/09000/09929_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "949",
+        "patient_id": "2809.0",
+        "filename_hr": "records500/00000/00949_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "11230",
+        "patient_id": "9846.0",
+        "filename_hr": "records500/11000/11230_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "18756",
+        "patient_id": "13186.0",
+        "filename_hr": "records500/18000/18756_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "17247",
+        "patient_id": "13219.0",
+        "filename_hr": "records500/17000/17247_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "18131",
+        "patient_id": "10158.0",
+        "filename_hr": "records500/18000/18131_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "14304",
+        "patient_id": "17745.0",
+        "filename_hr": "records500/14000/14304_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "4747",
+        "patient_id": "5126.0",
+        "filename_hr": "records500/04000/04747_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "2281",
+        "patient_id": "12043.0",
+        "filename_hr": "records500/02000/02281_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "3696",
+        "patient_id": "15437.0",
+        "filename_hr": "records500/03000/03696_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "559",
+        "patient_id": "12042.0",
+        "filename_hr": "records500/00000/00559_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "14580",
+        "patient_id": "18701.0",
+        "filename_hr": "records500/14000/14580_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "6337",
+        "patient_id": "12853.0",
+        "filename_hr": "records500/06000/06337_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "5276",
+        "patient_id": "13847.0",
+        "filename_hr": "records500/05000/05276_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "1197",
+        "patient_id": "7417.0",
+        "filename_hr": "records500/01000/01197_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "4336",
+        "patient_id": "806.0",
+        "filename_hr": "records500/04000/04336_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "5841",
+        "patient_id": "10624.0",
+        "filename_hr": "records500/05000/05841_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "16532",
+        "patient_id": "19983.0",
+        "filename_hr": "records500/16000/16532_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "3165",
+        "patient_id": "6323.0",
+        "filename_hr": "records500/03000/03165_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "9689",
+        "patient_id": "10740.0",
+        "filename_hr": "records500/09000/09689_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "18055",
+        "patient_id": "10146.0",
+        "filename_hr": "records500/18000/18055_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "1200",
+        "patient_id": "5266.0",
+        "filename_hr": "records500/01000/01200_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "2083",
+        "patient_id": "5861.0",
+        "filename_hr": "records500/02000/02083_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "3486",
+        "patient_id": "5946.0",
+        "filename_hr": "records500/03000/03486_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "5452",
+        "patient_id": "19327.0",
+        "filename_hr": "records500/05000/05452_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "12034",
+        "patient_id": "2506.0",
+        "filename_hr": "records500/12000/12034_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "162",
+        "patient_id": "9780.0",
+        "filename_hr": "records500/00000/00162_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "4167",
+        "patient_id": "21197.0",
+        "filename_hr": "records500/04000/04167_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "15227",
+        "patient_id": "13393.0",
+        "filename_hr": "records500/15000/15227_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "3855",
+        "patient_id": "11055.0",
+        "filename_hr": "records500/03000/03855_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "2103",
+        "patient_id": "2544.0",
+        "filename_hr": "records500/02000/02103_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "1246",
+        "patient_id": "11417.0",
+        "filename_hr": "records500/01000/01246_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "12710",
+        "patient_id": "9219.0",
+        "filename_hr": "records500/12000/12710_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "18200",
+        "patient_id": "6369.0",
+        "filename_hr": "records500/18000/18200_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "14217",
+        "patient_id": "12500.0",
+        "filename_hr": "records500/14000/14217_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "20684",
+        "patient_id": "13573.0",
+        "filename_hr": "records500/20000/20684_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "378",
+        "patient_id": "11498.0",
+        "filename_hr": "records500/00000/00378_hr",
+        "strat_fold": "10"
+      }
+    ]
+  }
+}

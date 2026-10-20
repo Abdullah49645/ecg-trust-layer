@@ -1,0 +1,15 @@
+# Core pipeline + evaluation + app (tested with Python 3.13)
+numpy>=2.0
+scipy>=1.13
+opencv-python-headless>=4.9
+scikit-learn>=1.4
+wfdb>=4.1
+pandas>=2.0
+Flask>=3.0
+# Tests
+pytest>=8.0
+# Optional: only needed to regenerate figures / demo / PDF
+matplotlib>=3.8
+reportlab>=4.0
+playwright>=1.45
+piper-tts>=1.2

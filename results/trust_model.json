@@ -1,0 +1,214 @@
+{
+  "pipeline_version": "1.0",
+  "package_version": "0.1.0",
+  "anchors": {
+    "f_unsupported": {
+      "good": 0.31520243165068873,
+      "bad": 0.3918657653191979,
+      "active": true
+    },
+    "f_unexplained": {
+      "good": 0.0,
+      "bad": 0.1414970843540611,
+      "active": true
+    },
+    "f_ambiguity": {
+      "good": 0.4166666666666667,
+      "bad": 0.7666666666666667,
+      "active": true
+    },
+    "f_roughness": {
+      "good": 0.916979456121079,
+      "bad": 2.003711961499369,
+      "active": true
+    },
+    "f_missing": {
+      "good": 0.0,
+      "bad": 0.0,
+      "active": false
+    },
+    "f_cal_disp": {
+      "good": 5.8273537998365654e-06,
+      "bad": 0.009536932519358204,
+      "active": true
+    },
+    "f_tilt": {
+      "good": 0.0,
+      "bad": 0.40440841034508423,
+      "active": true
+    },
+    "f_cal_resid": {
+      "good": 6.944774359162867e-14,
+      "bad": 0.013691362132772045,
+      "active": true
+    },
+    "f_aniso": {
+      "good": 4.440892098500626e-16,
+      "bad": 0.0066478577885287216,
+      "active": true
+    },
+    "f_scale_ambig": {
+      "good": 0.0,
+      "bad": 0.5,
+      "active": true
+    },
+    "f_snr_local": {
+      "good": 232.84957275390624,
+      "bad": 15.18521478652954,
+      "active": true
+    },
+    "f_sharp": {
+      "good": 0.8847775902066911,
+      "bad": 0.7801858397952297,
+      "active": true
+    },
+    "f_res": {
+      "good": 8.0,
+      "bad": 2.799536561082647,
+      "active": true
+    },
+    "f_snr": {
+      "good": 233.89694213867188,
+      "bad": 15.320663696930596,
+      "active": true
+    }
+  },
+  "learned": {
+    "names": [
+      "f_unsupported",
+      "f_unexplained",
+      "f_ambiguity",
+      "f_roughness",
+      "f_missing",
+      "f_cal_disp",
+      "f_tilt",
+      "f_cal_resid",
+      "f_aniso",
+      "f_scale_ambig",
+      "f_snr_local",
+      "f_sharp",
+      "f_res",
+      "f_snr"
+    ],
+    "mean": [
+      0.18585374039951758,
+      0.00705083264715396,
+      0.23656632969101005,
+      0.4929611909519514,
+      0.002760137724495896,
+      0.0005233055119471729,
+      0.017307366290597384,
+      0.0023349995855597343,
+      0.0006035014065339151,
+      0.020928564526839215,
+      4.868517110672156,
+      0.6255621232935575,
+      2.135358168039377,
+      4.872254459871886
+    ],
+    "scale": [
+      0.0805346320135881,
+      0.04530914320551459,
+      0.11823810609564091,
+      0.23074231397222908,
+      0.029620711367386473,
+      0.0036830513577072134,
+      0.11861028749093748,
+      0.027555156135452653,
+      0.0060310926873543376,
+      0.09169643938424973,
+      0.7578897330895324,
+      0.02306818346912247,
+      0.2026834904095802,
+      0.7549302630012704
+    ],
+    "coef": [
+      -0.12739865190707497,
+      -0.14125181806709872,
+      0.5878884645142014,
+      0.3370913808722009,
+      0.08066964001017508,
+      0.17945694003845805,
+      0.07390179941114594,
+      0.3954366888361146,
+      0.6607711677056316,
+      0.6198687944385641,
+      0.880812753937087,
+      -0.0013968657966114133,
+      0.10897598126354544,
+      -0.4489514644459467
+    ],
+    "intercept": -0.6466013417236458
+  },
+  "operational_score": "learned",
+  "operational_choice": {
+    "rule": "the score with the lower AURC on the VAL split becomes the operational score",
+    "val_aurc": {
+      "heuristic": 0.042427944552949265,
+      "learned": 0.03710151912524398
+    }
+  },
+  "thresholds": {
+    "t_accept": 57.76988025662586,
+    "t_reject": 10.453026475352045,
+    "rule": "POST-HOC (configs/analysis_addendum.json): lowest val threshold with accepted bad-beat rate <= 1%; reject: highest val threshold with rejected bad-beat rate >= 50%"
+  },
+  "thresholds_prereg": {
+    "t_accept": 0.0,
+    "t_reject": 0.0,
+    "rule": {
+      "t_accept": "lowest val threshold such that the bad-beat rate among beats scoring >= t is <= 5% (fallback: nothing accepted)",
+      "t_reject": "highest val threshold such that the bad-beat rate among beats scoring < t is >= 50% (fallback: nothing rejected)"
+    }
+  },
+  "fit_on": {
+    "tune_beats": 14384,
+    "val_beats": 7376,
+    "tune_bad_rate": 0.04233870967741935,
+    "val_bad_rate": 0.0425704989154013
+  },
+  "feature_doc": {
+    "f_unsupported": "fraction of re-rendered trace pixels that do not lie on observed ink (0 = fully supported)",
+    "f_unexplained": "observed trace-band ink not accounted for by the re-rendered trace, per drawn pixel (0 = none)",
+    "f_ambiguity": "fraction of window columns with competing ink runs or excess run height",
+    "f_roughness": "RMS second difference of the extracted waveform in the window (mm)",
+    "f_missing": "fraction of window columns with no valid extracted sample",
+    "f_cal_disp": "largest relative disagreement of grid pitch between image strips",
+    "f_tilt": "drift of grid lines top-to-bottom (mm): rotation/perspective evidence",
+    "f_cal_resid": "residual of grid-line fit (mm)",
+    "f_aniso": "|px/mm horizontal / px/mm vertical - 1|",
+    "f_scale_ambig": "0 = scale read from major/minor grid lines, 0.5 = resolved only by heart-rate plausibility, 1 = unresolved",
+    "f_snr_local": "trace ink level in the window / background noise",
+    "f_sharp": "ink mass per run pixel on flat trace parts (1 = crisp, lower = blurred)",
+    "f_res": "image resolution (pixels per mm)",
+    "f_snr": "global trace ink level / background noise"
+  },
+  "groups": {
+    "rerender": [
+      "f_unsupported",
+      "f_unexplained"
+    ],
+    "ambiguity": [
+      "f_ambiguity"
+    ],
+    "continuity": [
+      "f_roughness"
+    ],
+    "missing": [
+      "f_missing"
+    ],
+    "calibration": [
+      "f_cal_disp",
+      "f_tilt",
+      "f_cal_resid",
+      "f_aniso",
+      "f_scale_ambig"
+    ],
+    "image": [
+      "f_snr_local",
+      "f_sharp",
+      "f_res",
+      "f_snr"
+    ]
+  }
+}

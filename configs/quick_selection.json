@@ -1,0 +1,68 @@
+{
+  "dataset": "PTB-XL v1.0.3 (PhysioNet, doi:10.13026/kfzx-aw45)",
+  "note": "first 10 held-out test-fold records of configs/record_selection.json (bundled so the quick preset and the demo work offline)",
+  "splits": {
+    "test": [
+      {
+        "ecg_id": "968",
+        "patient_id": "4944.0",
+        "filename_hr": "records500/00000/00968_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "11500",
+        "patient_id": "13887.0",
+        "filename_hr": "records500/11000/11500_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "9583",
+        "patient_id": "18252.0",
+        "filename_hr": "records500/09000/09583_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "63",
+        "patient_id": "15265.0",
+        "filename_hr": "records500/00000/00063_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "14781",
+        "patient_id": "10286.0",
+        "filename_hr": "records500/14000/14781_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "7024",
+        "patient_id": "18366.0",
+        "filename_hr": "records500/07000/07024_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "9272",
+        "patient_id": "9459.0",
+        "filename_hr": "records500/09000/09272_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "11182",
+        "patient_id": "21778.0",
+        "filename_hr": "records500/11000/11182_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "19853",
+        "patient_id": "17338.0",
+        "filename_hr": "records500/19000/19853_hr",
+        "strat_fold": "10"
+      },
+      {
+        "ecg_id": "16602",
+        "patient_id": "7037.0",
+        "filename_hr": "records500/16000/16602_hr",
+        "strat_fold": "10"
+      }
+    ]
+  }
+}

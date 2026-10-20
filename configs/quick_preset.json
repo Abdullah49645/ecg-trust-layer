@@ -1,0 +1,13 @@
+{
+  "_comment": "Quick preset: frozen trust model (results/trust_model.json), 10 bundled held-out records, 8 conditions; same code path as the full run.",
+  "conditions": [
+    "clean",
+    "lowres_mild",
+    "blur_severe",
+    "perspective_severe",
+    "occlusion_severe",
+    "ink_overlay_severe",
+    "thick_mild",
+    "grid_severe"
+  ]
+}

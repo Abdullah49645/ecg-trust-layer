@@ -1,0 +1,54 @@
+{
+  "_comment": "Analysis plan, committed BEFORE any val/test result was computed. The evaluation code reads these values; changing them after seeing results would be a protocol deviation and must be disclosed.",
+  "defined_on": "2026-10-20",
+  "data": {
+    "source": "PTB-XL v1.0.3, lead II, 500 Hz records, first 10 s",
+    "records": {"tune": 60, "val": 30, "test": 80},
+    "split_policy": "official PTB-XL strat_fold (tune folds 1-8, val fold 9, test fold 10), one record per patient",
+    "images": "synthetic ECG-paper renderings of the digital signals (NOT photographs of real paper ECGs)",
+    "conditions": "clean + 10 degradation families x {mild, severe} = 21 conditions (configs in src/ecgtrust/degrade.py)"
+  },
+  "unit_of_analysis": "detected beat (candidate R peak) on the extracted signal",
+  "beat_error": {
+    "definition": "NRMSE_beat = RMSE(extracted - reference) over the beat window [R-200 ms, R+400 ms] after global DC+lag alignment, divided by robust record amplitude (P99-P1 of reference)",
+    "unmatched_beats": "detected beats with no reference beat within 100 ms are assigned error 1.0 (false detections are errors)",
+    "bad_beat": "unmatched OR NRMSE_beat > 0.10"
+  },
+  "trust_scores": {
+    "heuristic": "equal-weight geometric mean of six evidence-group scores; anchors from tune split feature distributions only (no error labels)",
+    "learned": "L2 logistic regression on raw features, trained on tune split, labels = bad_beat",
+    "operational_choice_rule": "the score with the lower AURC on the VAL split becomes the operational score",
+    "threshold_rule": {
+      "t_accept": "lowest val threshold such that the bad-beat rate among beats scoring >= t is <= 5% (fallback: nothing accepted)",
+      "t_reject": "highest val threshold such that the bad-beat rate among beats scoring < t is >= 50% (fallback: nothing rejected)"
+    }
+  },
+  "baselines": {
+    "accept_all": "accept every extractable beat",
+    "image_quality": "rank by global trace SNR (single basic image-quality statistic)",
+    "continuity": "rank by negative waveform roughness",
+    "valid_fraction": "rank by fraction of the beat window with valid samples"
+  },
+  "primary_endpoint": {
+    "metric": "AURC: mean over coverage of the average beat error among the top-coverage fraction ranked by trust (lower is better)",
+    "evaluated_on": "TEST split only, pooled over all conditions, plus per-condition breakdown",
+    "uncertainty": "95% percentile bootstrap over RECORDS (1000 resamples), paired across methods",
+    "hypotheses": {
+      "H1": "AURC(accept_all) - AURC(operational trust) > 0, 95% CI excludes 0",
+      "H2": "AURC(best simple baseline) - AURC(operational trust) > 0, 95% CI excludes 0"
+    },
+    "reporting_rule": "report the outcome whatever it is; if H1 or H2 is not supported say so plainly"
+  },
+  "secondary": [
+    "bad-beat rate and mean error at fixed coverage 0.9 / 0.8 / 0.7 / 0.6 / 0.5",
+    "error among accepted vs uncertain vs rejected vs all extractable beats at the operational thresholds",
+    "RR-interval and R-amplitude measurement error among accepted vs all beats",
+    "fraction of images unable to process, per condition",
+    "feature-group ablations of the heuristic score (re-render-only, drop-one-group)"
+  ],
+  "known_limitations_declared_in_advance": [
+    "synthetic renderings; the degradation mixture is chosen by the experimenters, so pooled numbers depend on it",
+    "the extractor and the renderer share a pixel grid model, which makes clean extraction easier than for real scans",
+    "single lead (II), single layout, 25 mm/s and 10 mm/mV assumed"
+  ]
+}

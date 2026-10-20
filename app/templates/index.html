@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ECG Trust Layer</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 64 28" aria-hidden="true"><path d="M1 15h14l4-11 6 22 5-17 4 6h29" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div>
+      <h1>ECG Trust Layer</h1>
+      <p>Which heartbeats of a digitized paper ECG can you still verify against the image?</p>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="analyze" class="on" aria-selected="true">Analyze</button>
+    <button role="tab" data-tab="evaluation" aria-selected="false">Evaluation</button>
+    <button role="tab" data-tab="about" aria-selected="false">About &amp; limits</button>
+  </nav>
+</header>
+<div class="banner" id="banner">
+  Research prototype, not a medical device and not clinically validated. Example images are <b>synthetic renderings</b> of PTB-XL signals, not photographs of real paper ECGs.
+</div>
+<div class="banner err" id="modelWarn" hidden></div>
+
+<main>
+<!-- ============================================================ ANALYZE -->
+<section id="tab-analyze" class="tab on">
+  <div class="panel controls">
+    <div class="ctl">
+      <h2>1 · Choose an ECG image</h2>
+      <div class="row">
+        <label>Bundled example <select id="exRecord"></select></label>
+        <label>Image condition <select id="exCond"></select></label>
+        <button id="btnExample" class="primary">Analyze example</button>
+      </div>
+      <div class="or">or</div>
+      <div id="drop" class="drop" tabindex="0">
+        <input type="file" id="file" accept="image/png,image/jpeg" hidden>
+        <b>Drop an ECG image here</b> or <button id="btnPick" class="link">choose a file</button>
+        <span class="hint">PNG / JPEG · analysed locally, never saved</span>
+      </div>
+      <details class="assump">
+        <summary>What kind of image does this accept?</summary>
+        <ul>
+          <li>One lead, drawn as a dark trace on light paper with a standard pink/red grid (1 mm and 5 mm lines).</li>
+          <li>Standard speed and gain are assumed: 25 mm/s and 10 mm/mV.</li>
+          <li>Roughly frontal views. If the grid or trace cannot be read, the result is <b>“unable”</b>. The tool does not guess.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <div id="status" class="status" hidden></div>
+
+  <div id="result" hidden>
+    <div class="panel summary" id="summary"></div>
+
+    <div class="panel viewer">
+      <div class="viewbar">
+        <h2>2 · Image, extracted trace and beat trust</h2>
+        <div class="toggles">
+          <label><input type="checkbox" id="tTrace" checked> extracted trace</label>
+          <label><input type="checkbox" id="tBeats" checked> beat windows</label>
+          <label><input type="checkbox" id="tGaps" checked> missing columns</label>
+          <button id="btnZoom" class="link">zoom: fit</button>
+        </div>
+      </div>
+      <div class="scroller" id="scroller"><div class="stage" id="stage"><img id="img" alt="ECG image under analysis"><svg id="ov" preserveAspectRatio="none"></svg></div></div>
+      <div class="legend" id="legend"></div>
+      <div class="beatstrip" id="beatstrip" aria-label="Beats"></div>
+    </div>
+
+    <div class="panel inspector" id="inspector" hidden></div>
+  </div>
+</section>
+
+<!-- ============================================================ EVALUATION -->
+<section id="tab-evaluation" class="tab">
+  <div id="evalBody"></div>
+  <div class="panel reproduce" id="reproduce">
+    <h2>Reproduce the evaluation</h2>
+    <p>This runs the real pipeline on your machine: render → degrade → digitize → score → statistics. Nothing is replayed. Progress below is reported by the running job.</p>
+    <div class="row">
+      <button id="btnQuick" class="primary">Reproduce the Evaluation (quick preset)</button>
+      <button id="btnFullCached" class="ghost">Re-derive full statistics from cached images</button>
+    </div>
+    <p class="hint">Quick preset is a <b>reproducibility check</b>, not a replacement for the full test: it uses the frozen trust model on 10 held-out PTB-XL test-fold records, 8 image conditions (about 30–60 s). The full from-scratch run (all 21 conditions, 170 records) is <code>python scripts/run_evaluation.py --preset full</code> and takes tens of minutes. “Re-derive full statistics” re-fits the model and re-evaluates from the bundled per-image results (about 4–5 min); it reports stage-level progress only, and re-checks the shipped full results.</p>
+    <div class="job" id="job" hidden>
+      <div class="jobhead"><span id="jobStage">starting</span><span id="jobTime"></span></div>
+      <div class="bar"><i id="jobBar"></i></div>
+      <div class="jobmsg" id="jobMsg"></div>
+      <div id="jobResult"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ABOUT -->
+<section id="tab-about" class="tab">
+  <div class="panel prose" id="aboutBody"></div>
+</section>
+</main>
+<footer>ECG Trust Layer · UnivaBio 2026 · data: PTB-XL v1.0.3 (CC BY 4.0) · all processing is local</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>

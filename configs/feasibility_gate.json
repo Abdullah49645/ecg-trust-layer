@@ -1,0 +1,23 @@
+{
+  "_comment": "Feasibility gate for the clean-image extractor. Written BEFORE the first extraction run on any record. Criteria are evaluated on the 'tune' split (PTB-XL folds 1-8), clean synthetic renderings, lead II, 500 Hz source.",
+  "defined_before_first_extraction_run": true,
+  "defined_on": "2026-10-20",
+  "split": "tune",
+  "condition": "clean",
+  "criteria": {
+    "median_nrmse_max": 0.05,
+    "p90_nrmse_max": 0.10,
+    "median_pearson_min": 0.98,
+    "median_valid_coverage_min": 0.98,
+    "median_abs_heart_rate_error_bpm_max": 2.0,
+    "median_abs_r_amplitude_error_mv_max": 0.10
+  },
+  "metric_definitions": {
+    "nrmse": "RMSE(extracted - reference) / (P99 - P1 of reference), after documented alignment (DC offset + bounded time lag).",
+    "pearson": "Pearson correlation between aligned extracted and reference waveforms on valid samples.",
+    "valid_coverage": "Fraction of image columns inside the trace x-extent that carry a valid (unmasked) extracted sample.",
+    "heart_rate_error": "|mean HR from extracted R peaks - mean HR from reference R peaks| in beats/min (same detector on both signals).",
+    "r_amplitude_error": "|R-wave amplitude (peak minus local pre-QRS baseline) extracted - reference| in mV, matched beats."
+  },
+  "if_gate_fails": "Investigate root cause on clean images and fix the extractor; if no credible extractor within the time budget, report infeasibility honestly instead of building UI around it."
+}

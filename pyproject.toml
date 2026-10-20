@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecg-trust-layer"
+version = "0.1.0"
+description = "Beat-level, reference-free trust scores for digitized paper ECGs (UnivaBio 2026 research prototype)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["numpy>=2.0", "scipy>=1.13", "opencv-python-headless>=4.9", "scikit-learn>=1.4", "wfdb>=4.1", "pandas>=2.0", "Flask>=3.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
